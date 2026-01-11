@@ -1,0 +1,103 @@
+:root {
+    --kamil-navy: #00004d; 
+    --kamil-red: #cc0000;  
+    --kamil-white: #ffffff;
+    --light-bg: #f4f7f6;
+    --overlay-navy: rgba(0, 0, 77, 0.98);
+}
+
+body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; scroll-behavior: smooth; overflow-x: hidden; }
+
+/* --- Animations --- */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* --- Header & Navigation --- */
+header {
+    background: var(--kamil-white);
+    padding: 20px 5%; 
+    display: grid;
+    grid-template-columns: 1.2fr auto 1.2fr; 
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 4px solid var(--kamil-navy);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.logo-container { display: flex; align-items: center; gap: 15px; }
+.logo-container img { height: 80px; width: auto; }
+.school-name { color: var(--kamil-navy); font-weight: 800; line-height: 1.1; font-size: 1rem; }
+
+.kpm-header-logo {
+    height: 80px; 
+    width: auto;
+    transform: scale(1.4); 
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+.nav-right-wrapper { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.live-clock-container { font-size: 0.9rem; color: var(--kamil-navy); font-weight: 700; background: rgba(0, 0, 77, 0.08); padding: 6px 18px; border-radius: 25px; }
+.nav-actions { display: flex; align-items: center; gap: 25px; }
+nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
+nav a { text-decoration: none; color: var(--kamil-navy); font-weight: 800; text-transform: uppercase; font-size: 0.9rem; }
+.search-trigger-btn { background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--kamil-navy); transition: 0.3s; }
+.search-trigger-btn:hover { color: var(--kamil-red); transform: scale(1.2); }
+
+/* --- Hero Section --- */
+.hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,77,0.7), rgba(0,0,77,0.7)), url('bangunan_sekolah.jpg');
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center; color: white; text-align: center;
+}
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 4rem; margin: 0; }
+.hero-motto { letter-spacing: 8px; font-weight: 400; margin-top: 15px; font-size: 1.2rem; }
+
+/* --- Sections & Cards --- */
+.section-padding { padding: 80px 10%; }
+.bg-light { background-color: var(--light-bg); }
+.section-title { color: var(--kamil-navy); font-size: 2.5rem; margin-bottom: 60px; position: relative; text-align: center; font-weight: 800; }
+.section-title::after { content: ''; width: 80px; height: 4px; background: var(--kamil-red); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
+
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+.info-card { background: white; padding: 35px; border-radius: 12px; border-top: 6px solid var(--kamil-navy); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.moto-italic { font-style: italic; font-weight: 600; color: var(--kamil-navy); }
+.slogan-card { border-top-color: var(--kamil-red); }
+.kamil-slogan-text { font-size: 1.6rem; font-weight: 800; color: var(--kamil-red); margin: 10px 0; }
+
+/* --- Contact Section --- */
+.contact-wrapper { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 20px; }
+.contact-details { flex: 1; min-width: 350px; background: var(--kamil-navy); color: white; padding: 50px; border-radius: 15px; }
+.contact-details h3 { color: var(--kamil-red); font-size: 1.8rem; margin-bottom: 30px; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
+.contact-item { margin-bottom: 25px; display: flex; align-items: center; gap: 20px; transition: transform 0.3s ease; }
+.contact-icon { width: 50px; height: 50px; background: var(--kamil-red); display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; }
+.contact-text b { display: block; color: var(--kamil-red); font-size: 0.8rem; margin-bottom: 5px; }
+.contact-link-item { text-decoration: none; color: inherit; }
+.contact-link-item:hover .contact-item { transform: translateX(10px); }
+
+.directions-btn {
+    display: inline-flex; align-items: center; gap: 10px; background: var(--kamil-red); color: white; 
+    padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: 800; margin-top: 20px; transition: 0.3s;
+}
+.directions-btn:hover { background: white; color: var(--kamil-red); transform: translateY(-3px); }
+
+.map-box { flex: 1.5; min-width: 350px; border-radius: 15px; overflow: hidden; border: 5px solid var(--kamil-navy); height: 500px; }
+.map-box iframe { width: 100%; height: 100%; border: 0; }
+
+/* --- Search Overlay --- */
+#searchOverlay {
+    position: fixed; top: -100%; left: 0; width: 100%; height: 100vh;
+    background: var(--overlay-navy); backdrop-filter: blur(10px); z-index: 2000;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    transition: top 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+#searchOverlay.active { top: 0; }
+.search-container { width: 80%; max-width: 800px; text-align: center; }
+.search-title { color: white; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 20px; }
+.search-form { display: flex; border-bottom: 2px solid var(--kamil-red); padding-bottom: 10px; }
+.search-form input { flex: 1; background: none; border: none; outline: none; color: white; font-size: 2.5rem; font-family: 'Montserrat', sans-serif; font-weight: 700; }
+.close-search-overlay { position: absolute; top: 40px; right: 5%; background: none; border: 2px solid white; color: white; font-size: 1.5rem; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; }
+
+footer { background: #111; color: #888; padding: 40px; text-align: center; font-size: 0.9rem; }
