@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMK Kamil | Portal Rasmi</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portal Rasmi Sekolah Menengah Kebangsaan Kamil, Pasir Puteh, Kelantan. Pengetahuan Tangga Kemajuan.">
+    <meta name="keywords" content="SMK Kamil, SMK Kamil Pasir Puteh, Sekolah Kelantan, Portal SMK Kamil">
+    <meta name="author" content="SMK Kamil">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smkkamil.edu.my/">
+    <meta property="og:title" content="SMK Kamil | Portal Rasmi">
+    <meta property="og:description" content="Portal Rasmi Sekolah Menengah Kebangsaan Kamil, Pasir Puteh, Kelantan. Pengetahuan Tangga Kemajuan.">
+    <meta property="og:image" content="bangunan_sekolah.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://smkkamil.edu.my/">
+    <meta property="twitter:title" content="SMK Kamil | Portal Rasmi">
+    <meta property="twitter:description" content="Portal Rasmi Sekolah Menengah Kebangsaan Kamil, Pasir Puteh, Kelantan. Pengetahuan Tangga Kemajuan.">
+    <meta property="twitter:image" content="bangunan_sekolah.jpg">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="searchOverlay">
+        <button class="close-search-overlay" id="closeSearch" aria-label="Tutup carian">✕</button>
+        <div class="search-container">
+            <h2 class="search-title">APA YANG ANDA CARI?</h2>
+            <form class="search-form" id="actualSearchForm">
+                <div class="search-input-wrapper">
+                    <input type="text" id="mainSearchInput" placeholder="Mula menaip carian..." autocomplete="off">
+                    <button type="button" class="search-clear-btn" id="clearSearchInput" aria-label="Padam carian">✕</button>
+                </div>
+                <button type="submit" class="search-submit-btn" aria-label="Cari">🔍</button>
+            </form>
+            <div id="searchStatus"></div>
+            <div id="searchResults" class="search-results-container"></div>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo_transparent.png" alt="SMK Kamil Logo">
+            <div class="school-name">SMK KAMIL<br>PASIR PUTEH</div>
+        </div>
+
+        <img src="KPM.png" alt="KPM Logo" class="kpm-header-logo">
+
+        <div class="nav-right-wrapper">
+            <div class="live-clock-container" id="liveClock">Loading Date & Time...</div>
+            <div class="nav-actions">
+                <nav id="mainNav">
+                    <ul>
+                        <li style="--item-index: 0;"><a href="#utama" data-route="home"><i class="fas fa-home"></i> <span>Utama</span></a></li>
+                        <li style="--item-index: 1;"><a href="#akademik" data-route="akademik"><i class="fas fa-graduation-cap"></i> <span>Akademik</span></a></li>
+                        <li style="--item-index: 2;"><a href="#pengumuman" data-route="home" data-scroll="pengumuman"><i class="fas fa-bullhorn"></i> <span>Pengumuman</span></a></li>
+                        <li style="--item-index: 3;"><a href="#maklumat" data-route="home" data-scroll="maklumat"><i class="fas fa-info-circle"></i> <span>Maklumat</span></a></li>
+                        <li style="--item-index: 4;"><a href="#contact" data-route="home" data-scroll="contact"><i class="fas fa-envelope"></i> <span>Hubungi</span></a></li>
+                    </ul>
+                    <div class="drawer-extra-content">
+                        <div class="drawer-divider"></div>
+                        <div class="drawer-contact-info">
+                            <h4>HUBUNGI KAMI</h4>
+                            <a href="tel:+6097855300"><i class="fas fa-phone-alt"></i> +609-785 5300</a>
+                            <a href="mailto:dee4289@moe.edu.my"><i class="fas fa-envelope"></i> dee4289@moe.edu.my</a>
+                        </div>
+                        <div class="drawer-socials">
+                            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </nav>
+                <div class="nav-divider"></div>
+                <div class="utility-cluster">
+                    <button class="theme-toggle-btn" id="themeToggle" aria-label="Tukar Tema">
+                        <i class="fas fa-moon"></i>
+                        <span>&nbsp;</span>
+                    </button>
+                    <button class="search-trigger-btn" id="openSearch" aria-label="Cari">
+                        <i class="fas fa-search"></i>
+                        <span>&nbsp;</span>
+                    </button>
+                </div>
+                <button class="menu-toggle-btn" id="menuToggle" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="view-home" class="spa-view active">
+    <section id="utama" class="hero-slider">
+        <div class="slides-container">
+            <!-- Slide 1: Kampus -->
+            <div class="slide active" style="background-image: linear-gradient(rgba(0,0,77,0.65), rgba(0,0,77,0.65)), url('bangunan_sekolah.jpg');">
+                <div class="slide-content reveal active">
+                    <h1>SMK Kamil</h1>
+                    <p class="hero-motto">PENGETAHUAN TANGGA KEMAJUAN</p>
+                </div>
+            </div>
+            <!-- Slide 2: Alumni -->
+            <div class="slide slide-blurred-bg">
+                <div class="blur-bg" style="background-image: url('alumni_jepun.jpg');"></div>
+                <div class="slide-content-graphic">
+                    <img src="alumni_jepun.jpg" alt="Alumni SPM 2022 di Jepun" class="centered-graphic">
+                </div>
+            </div>
+        </div>
+        <button class="slider-arrow prev" id="sliderPrev" aria-label="Sebelumnya">❮</button>
+        <button class="slider-arrow next" id="sliderNext" aria-label="Seterusnya">❯</button>
+        <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+    <section id="pengumuman" class="section-padding">
+        <h2 class="section-title reveal">Pengumuman</h2>
+        <div class="announcements-container reveal">
+            <div class="announcements-loading" id="announcementsLoading">
+                <div class="spinner"></div>
+                <p>Memuatkan pengumuman...</p>
+            </div>
+            <div class="announcements-grid" id="announcementsGrid"></div>
+        </div>
+    </section>
+
+    <section id="maklumat" class="section-padding bg-light">
+        <h2 class="section-title reveal">Maklumat Sekolah</h2>
+        <div class="info-grid">
+            <div class="info-card reveal" id="search-misi">
+                <h3>MISI</h3>
+                <p>Melestarikan sistem pendidikan yang berkualiti untuk membangunkan potensi individu bagi memenuhi aspirasi negara.</p>
+            </div>
+            <div class="info-card reveal" id="search-visi">
+                <h3>VISI</h3>
+                <p>Pendidikan Berkualiti, Insan Terdidik, Negara Sejahtera.</p>
+            </div>
+            <div class="info-card reveal" id="search-moto">
+                <h3>MOTO</h3>
+                <p class="moto-italic">"Pengetahuan Tangga Kemajuan"</p>
+                <p>Tunjang semangat warga Kamilian sejak tahun 1954.</p>
+            </div>
+            <div class="info-card reveal slogan-card" id="search-slogan">
+                <h3>SLOGAN</h3>
+                <p class="kamil-slogan-text">KAMIL TERSOHOR</p>
+                <p>Identiti kecemerlangan yang melambangkan kebanggaan sekolah.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs" class="section-padding">
+        <h2 class="section-title reveal">Program Unggul</h2>
+        <div class="programs-grid">
+            <div class="program-card reveal" id="search-program-stem">
+                <div class="program-icon-wrapper">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <h3>STEM & Inovasi</h3>
+                <p>Peneraju kreativiti sains, robotik, dan pengekodan bagi menyediakan Kamilian ke arah cabaran teknologi masa hadapan.</p>
+                <a href="#maklumat" class="program-btn">Ketahui Lanjut <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="program-card reveal" id="search-program-sukan">
+                <div class="program-icon-wrapper">
+                    <i class="fas fa-running"></i>
+                </div>
+                <h3>Sukan Cemerlang</h3>
+                <p>Membina jaguh olahraga dan ragbi elit melalui program latihan sistematik serta kejohanan berprestasi tinggi.</p>
+                <a href="#maklumat" class="program-btn">Ketahui Lanjut <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="program-card reveal" id="search-program-seni">
+                <div class="program-icon-wrapper">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3>Seni & Kebudayaan</h3>
+                <p>Mengasah bakat seni visual, muzik, persembahan kreatif, serta kepintaran berdebat di persada kebangsaan.</p>
+                <a href="#maklumat" class="program-btn">Ketahui Lanjut <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="program-card reveal" id="search-program-kepimpinan">
+                <div class="program-icon-wrapper">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Kepimpinan Lestari</h3>
+                <p>Melahirkan pemimpin berwibawa melalui program kokurikulum berimpak tinggi dan modul sahsiah unggul.</p>
+                <a href="#maklumat" class="program-btn">Ketahui Lanjut <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <h2 class="section-title reveal">Lokasi & Perhubungan</h2>
+        <div class="contact-wrapper">
+            <div class="contact-details reveal">
+                <h3>Hubungi Kami</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-text">
+                        <b>Alamat Rasmi</b>
+                        <span>Sekolah Menengah Kebangsaan Kamil,<br>16800 Pasir Puteh, Kelantan</span>
+                    </div>
+                </div>
+
+                <a href="tel:+6097855300" class="contact-link-item">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-text">
+                            <b>Telefon / Faks</b>
+                            <span>+609-785 5300</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="mailto:dee4289@moe.edu.my" class="contact-link-item">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text">
+                            <b>Emel Rasmi</b>
+                            <span>dee4289@moe.edu.my</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.google.com/maps/dir/?api=1&destination=5.839,102.395" target="_blank" class="directions-btn">
+                    <i class="fas fa-route"></i> Dapatkan Arah
+                </a>
+            </div>
+
+            <div class="map-box reveal">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.123456!2d102.395!3d5.839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwNTAnMjAuNCJOIDEwMsKwMjMnNDIuMCJF!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy" 
+                    allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <div id="view-akademik" class="spa-view hidden">
+        <!-- Akademik Hero -->
+        <section id="akademik-hero" class="akademik-hero-section slide-blurred-bg" style="background: none;">
+            <div class="blur-bg" style="background-image: url('kurikulum_group.jpg');"></div>
+            <div class="slide-content-graphic" style="position: relative; height: 100%; display: flex; align-items: center; justify-content: center; padding: 20px;">
+                <div style="position: relative; display: flex; justify-content: center;">
+                    <img src="kurikulum_group.jpg" alt="Kurikulum & Akademik Group" class="centered-graphic" style="transform: scale(1); opacity: 1; box-shadow: 0 8px 30px rgba(0,0,0,0.6);">
+                    <div class="akademik-glass-overlay">
+                        <div class="akademik-hero-content reveal">
+                            <h1>Kurikulum & Akademik</h1>
+                            <p class="hero-motto">Membentuk Kebijaksanaan, Membina Masa Depan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Akademik Pengenalan / Visi -->
+        <section class="section-padding bg-light">
+            <div class="akademik-intro reveal">
+                <h2 class="section-title">Pendidikan Bertaraf Dunia</h2>
+                <p class="akademik-lead">SMK Kamil komited menyediakan pendidikan berkualiti tinggi yang menyeluruh, menggabungkan kecemerlangan akademik dengan pembinaan sahsiah unggul bagi melahirkan generasi yang bersedia mendepani cabaran global.</p>
+                
+                <div class="akademik-stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Kelulusan SPM</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Tenaga Pengajar Profesional</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">A+</div>
+                        <div class="stat-label">Gred Purata Sekolah Unggul</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bidang Pembelajaran / Aliran -->
+        <section class="section-padding">
+            <h2 class="section-title reveal">Aliran Pengajian</h2>
+            <div class="curriculum-grid">
+                <!-- Aliran Sains Tulen -->
+                <div class="curriculum-card reveal" id="search-akademik-sains-tulen">
+                    <div class="curriculum-icon"><i class="fas fa-flask"></i></div>
+                    <h3>Sains Tulen</h3>
+                    <p>Fokus kepada pemahaman mendalam tentang alam semula jadi, fizik, dan kimia untuk melahirkan saintis dan doktor masa depan.</p>
+                    <ul class="subject-list">
+                        <li>Fizik & Kimia</li>
+                        <li>Biologi</li>
+                        <li>Matematik Tambahan</li>
+                    </ul>
+                </div>
+
+                <!-- Aliran Sains Sosial -->
+                <div class="curriculum-card reveal" id="search-akademik-sains-sosial">
+                    <div class="curriculum-icon"><i class="fas fa-globe-asia"></i></div>
+                    <h3>Sains Sosial & Bahasa</h3>
+                    <p>Menekankan aspek kemanusiaan, geografi, sastera, dan kemahiran komunikasi berimpak tinggi dalam masyarakat.</p>
+                    <ul class="subject-list">
+                        <li>Kesusasteraan Melayu/Inggeris</li>
+                        <li>Geografi & Sejarah</li>
+                        <li>Bahasa Ketiga</li>
+                    </ul>
+                </div>
+
+                <!-- Aliran Teknikal & Perniagaan -->
+                <div class="curriculum-card reveal" id="search-akademik-teknikal">
+                    <div class="curriculum-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Teknikal & Vokasional</h3>
+                    <p>Membina kemahiran praktikal dalam pengaturcaraan, reka cipta kreatif, perakaunan, dan pengurusan perniagaan moden.</p>
+                    <ul class="subject-list">
+                        <li>Sains Komputer & Reka Cipta</li>
+                        <li>Prinsip Perakaunan</li>
+                        <li>Perniagaan</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Anugerah & Kecemerlangan -->
+        <section class="section-padding bg-light">
+            <h2 class="section-title reveal">Pencapaian & Anugerah</h2>
+            <div class="achievements-carousel reveal">
+                <div class="achievement-card">
+                    <div class="achievement-badge"><i class="fas fa-trophy"></i></div>
+                    <h3>Anugerah Lonjakan Saujana SPM</h3>
+                    <p>Menerima penghargaan khas daripada Jabatan Pendidikan Negeri Kelantan atas peningkatan ketara Gred Purata Sekolah (GPS).</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-badge"><i class="fas fa-medal"></i></div>
+                    <h3>Pingat Emas Olympiad Sains</h3>
+                    <p>Pelajar SMK Kamil merangkul pingat emas dalam Kejohanan Olympiad Sains & Matematik Peringkat Kebangsaan.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Sekolah Menengah Kebangsaan Kamil. Hak Cipta Terpelihara.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
