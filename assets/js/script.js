@@ -387,7 +387,7 @@ document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el))
  */
 // Set your published Google Sheets CSV URL here. Example: 'https://docs.google.com/spreadsheets/d/e/2PACX-1v.../pub?output=csv'
 const GOOGLE_SHEET_CSV_URL = ''; 
-const FALLBACK_JSON_URL = 'announcements.json';
+const FALLBACK_JSON_URL = 'assets/data/announcements.json';
 
 async function loadAnnouncements() {
     const grid = document.getElementById('announcementsGrid');
